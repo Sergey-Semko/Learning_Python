@@ -28,3 +28,6 @@ MAC_list_dec
 
 print('{0[0]:08b} {0[1]:08b} {0[2]:08b}'.format(MAC_list_dec)) 
 #1010101010101010 1011101110111011 1100110011001100
+
+#Variant2
+print('{:08b} {:08b} {:08b}'.format(*MAC_list_dec))
