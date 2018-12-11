@@ -25,4 +25,4 @@ net_and_mask = [int(x) for x in IP_network.replace('/', '.').split('.')]
 template_net = ['Network:', '{0:<10}{1:<10}{2:<10}{3:<10}', '{0:>08b}  {1:>08b}  {2:>08b}  {3:>08b}']
 
 #template_mask =['Mask:', '/{4}']
-print (template_net.format(*net_and_mask)
+print ('\n'.join(template_net).format(*net_and_mask))
