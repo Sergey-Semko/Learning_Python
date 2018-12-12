@@ -65,5 +65,5 @@ type_if = input('Enter interface type and number: ')
 vlan_if = input('Enter vlan(s): ')
 
 print('\n' + 'interface' + type_if)
-print('\n'.join(interface[mode_if]).format(vlan))
+print('\n'.join(interface[mode_if]).format(vlan_if))
 
