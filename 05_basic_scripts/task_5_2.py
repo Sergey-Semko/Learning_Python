@@ -49,4 +49,5 @@ london_co = {
 }
 
 dev_key = input('Enter device name: ')
-print('\n' + london_co[dev_key])
+print('\n')
+print(london_co[dev_key])
