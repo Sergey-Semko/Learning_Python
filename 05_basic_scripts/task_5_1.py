@@ -24,5 +24,11 @@ IP_network = input("Enter IP network in format x.x.x.x/x: ")
 net_and_mask = [int(x) for x in IP_network.replace('/', '.').split('.')]
 template_net = ['Network:', '{0:<10}{1:<10}{2:<10}{3:<10}', '{0:>08b}  {1:>08b}  {2:>08b}  {3:>08b}']
 
-#template_mask =['Mask:', '/{4}']
+template_mask =['Mask:', '/{4}']
+mask_bin = [('1' * net_and_mask[-1] + '0' * (32 - net_and_mask[-1]))[0 +i:8 +i] for i in range(0, 25, 8)]
+mask_dec = [int(x, 2) for x in mask_bin]
+
 print ('\n'.join(template_net).format(*net_and_mask))
+print ('\n'.join(template_mask).format(*net_and_mask))
+print ('{:<10}{:<10}{:<10}{:<10}'.format(mask_dec))
+print ('{:<10}{:<10}{:<10}{:<10}'.format(mask_bin))
