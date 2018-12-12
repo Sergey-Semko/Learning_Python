@@ -30,5 +30,5 @@ mask_dec = [int(x, 2) for x in mask_bin]
 
 print ('\n'.join(template_net).format(*net_and_mask))
 print ('\n'.join(template_mask).format(*net_and_mask))
-print ('{:<10}{:<10}{:<10}{:<10}'.format(mask_dec))
-print ('{:<10}{:<10}{:<10}{:<10}'.format(mask_bin))
+print ('{:<10}{:<10}{:<10}{:<10}'.format(*mask_dec))
+print ('{:<10}{:<10}{:<10}{:<10}'.format(*mask_bin))
