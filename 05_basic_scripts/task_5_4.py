@@ -20,9 +20,15 @@ num_list = [10, 2, 30, 100, 10, 50, 11, 30, 15, 7]
 word_list = [
     'python', 'ruby', 'perl', 'ruby', 'perl', 'python', 'ruby', 'perl'
 ]
-print('num_list: ' + str(num_list) + '\n')
-el = input('Enter the element from list: ')
+print('num_list: ' + str(num_list))
+print('word_list: ' + str(word_list) + '\n')
+num_el = int(input('Enter the element from list num_list: '))
+word_el = input('Enter the element from list word_list: ')
 print(
-    'The last index of ' + el + ' in num_list is: ' 
-      + str(len(num_list) - 1 - num_list[::-1].index(int(el)))
+    'The last index of ' + num_el + ' in num_list is: ' 
+      + str(len(num_list) - 1 - num_list[::-1].index(num_el))
+)
+print(
+    'The last index of ' + word_el + ' in num_list is: ' 
+      + str(len(word_list) - 1 - word_list[::-1].index(word_el))
 )
