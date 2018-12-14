@@ -25,7 +25,7 @@ print('word_list: ' + str(word_list) + '\n')
 num_el = int(input('Enter the element from list num_list: '))
 word_el = input('Enter the element from list word_list: ')
 print(
-    'The last index of ' + num_el + ' in num_list is: ' 
+    'The last index of ' + str(num_el) + ' in num_list is: ' 
       + str(len(num_list) - 1 - num_list[::-1].index(num_el))
 )
 print(
