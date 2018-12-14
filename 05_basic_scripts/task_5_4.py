@@ -29,6 +29,6 @@ print(
       + str(len(num_list) - 1 - num_list[::-1].index(num_el))
 )
 print(
-    'The last index of ' + word_el + ' in num_list is: ' 
+    'The last index of ' + word_el + ' in word_list is: ' 
       + str(len(word_list) - 1 - word_list[::-1].index(word_el))
 )
