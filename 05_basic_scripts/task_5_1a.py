@@ -40,7 +40,7 @@ template_mask1 = ['Mask:', '/{4}']
 template_mask2 = ['{:<10}{:<10}{:<10}{:<10}']
 
 net_and_mask = [int(x) for x in IP_network.replace('/', '.').split('.')]
-net_and_mask = [net_and_mask[4-i] for i in range((32 - net_and_mask[-1])/8)]
+net_and_mask = [net_and_mask[4-i] for i in range(int((32 - net_and_mask[-1])/8))]
 mask_bin = [('1' * net_and_mask[-1] + '0' * (32 - net_and_mask[-1]))
            [0 + i:8 + i] for i in range(0, 25, 8)]
 mask_dec = [int(x, 2) for x in mask_bin]
