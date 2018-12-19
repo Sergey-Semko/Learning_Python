@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+from sys import argv
+
 # -*- coding: utf-8 -*-
 '''
 Задание 5.1b
@@ -9,8 +13,6 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
-
-from sys import argv
 
 IP_network = argv[1:]
 
