@@ -14,7 +14,7 @@ from sys import argv
 
 '''
 
-IP_network = argv[1:]
+IP_network = str(argv[1:])
 
 #IP_network = input("Enter IP network in format x.x.x.x/x: ")
 
