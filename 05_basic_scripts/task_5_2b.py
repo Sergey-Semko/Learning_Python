@@ -46,7 +46,7 @@ london_co = {
 }
 
 dev_key = input('Enter device name: ')
-param_key = input('Enter parameter name (' + (', ').join(list(london_co[dev_key].keys())) + ' ): ')
+param_key = input('Enter parameter name (' + (', ').join(list(london_co[dev_key].keys())) + '): ')
 
 print('\n')
 print(london_co[dev_key][param_key])
