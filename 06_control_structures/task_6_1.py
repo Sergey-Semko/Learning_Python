@@ -35,10 +35,10 @@ elif (IP_address[0]==255 and
     IP_address[2]==255 and
     IP_address[3]==255):
     print('local broadcast')
-elif IP_address[0]==0 and
+elif (IP_address[0]==0 and
     IP_address[1]==0 and
     IP_address[2]==0 and
-    IP_address[3]==0:
+    IP_address[3]==0):
     print('unassigned')
 else:
     print('unused')
