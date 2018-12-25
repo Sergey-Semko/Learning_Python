@@ -25,20 +25,20 @@ IP_address = input("Enter IP address in format 10.0.1.1: ")
 IP_address = [int(x) for x in IP_address.split('.')]
 
 if ((IP_address[0]>0 and IP_address[0]<=127) or
-   (IP_address[0]>127 and IP_address[0]<=191) or
-   (IP_address[0]>191 and IP_address[0]<=223)):
-   print('unicast')
+    (IP_address[0]>127 and IP_address[0]<=191) or
+    (IP_address[0]>191 and IP_address[0]<=223)):
+    print('unicast')
 elif IP_address[0]>223 and IP_address[0]<=239:
-   print('multicast')
-elif IP_address[0]==255 and
-   IP_address[1]==255 and
-   IP_address[2]==255 and
-   IP_address[3]==255:
-   print('local broadcast')
+    print('multicast')
+elif (IP_address[0]==255 and
+    IP_address[1]==255 and
+    IP_address[2]==255 and
+    IP_address[3]==255):
+    print('local broadcast')
 elif IP_address[0]==0 and
-   IP_address[1]==0 and
-   IP_address[2]==0 and
-   IP_address[3]==0:
-   print('unassigned')
+    IP_address[1]==0 and
+    IP_address[2]==0 and
+    IP_address[3]==0:
+    print('unassigned')
 else:
-   print('unused')
+    print('unused')
