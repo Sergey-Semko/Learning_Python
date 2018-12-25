@@ -24,9 +24,9 @@ D: 224-239
 IP_address = input("Enter IP address in format 10.0.1.1: ")
 IP_address = [int(x) for x in IP_address.split('.')]
 
-if (IP_address[0]>0 and IP_address[0]<=127) or
+if ((IP_address[0]>0 and IP_address[0]<=127) or
    (IP_address[0]>127 and IP_address[0]<=191) or
-   (IP_address[0]>191 and IP_address[0]<=223):
+   (IP_address[0]>191 and IP_address[0]<=223)):
    print('unicast')
 elif IP_address[0]>223 and IP_address[0]<=239:
    print('multicast')
