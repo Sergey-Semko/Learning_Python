@@ -21,6 +21,7 @@ D: 224-239
 '''
 
 # Solution
+'''
 IP_address = input("Enter IP address in format 10.0.1.1: ")
 IP_address = [int(x) for x in IP_address.split('.')]
 
@@ -39,6 +40,35 @@ elif (IP_address[0]==0 and
     IP_address[1]==0 and
     IP_address[2]==0 and
     IP_address[3]==0):
+    print('unassigned')
+else:
+    print('unused')
+    
+'''
+
+IP_address = [int(x) for x in input("Enter IP address in format 10.0.1.1: ").split('.')]
+
+if (
+    IP_address[0] in range(1, 128)
+    or IP_address[0] in range(127, 192)
+    or IP_address[0] in range (191, 224)
+):
+    print('unicast')
+elif IP_address[0] in range(223, 240):
+    print('multicast')
+elif (
+    IP_address[0]==255
+    and IP_address[1]==255
+    and IP_address[2]==255
+    and IP_address[3]==255
+):
+    print('local broadcast')
+elif (
+    IP_address[0]==0
+    and IP_address[1]==0
+    and IP_address[2]==0
+    and IP_address[3]==0
+):
     print('unassigned')
 else:
     print('unused')
