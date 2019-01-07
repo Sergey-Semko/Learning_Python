@@ -8,9 +8,9 @@
 Поэтому в соответствии каждому порту стоит список
 и первый (нулевой) элемент списка указывает как воспринимать номера VLAN,
 которые идут дальше:
-	add - значит VLANы надо будет добавить (команда switchport trunk allowed vlan add 10,20)
-	del - значит VLANы надо удалить из списка разрешенных (команда switchport trunk allowed vlan remove 17)
-	only - значит, что на интерфейсе должны остаться разрешенными только указанные VLANы (команда switchport trunk allowed vlan 11,30)
+    add - значит VLANы надо будет добавить (команда switchport trunk allowed vlan add 10,20)
+    del - значит VLANы надо удалить из списка разрешенных (команда switchport trunk allowed vlan remove 17)
+    only - значит, что на интерфейсе должны остаться разрешенными только указанные VLANы (команда switchport trunk allowed vlan 11,30)
 Задача для портов 0/1, 0/2, 0/4:
 - сгенерировать конфигурацию на основе шаблона trunk_template
 - с учетом ключевых слов add, del, only
@@ -49,11 +49,19 @@ for intf, vlan in fast_int['access'].items():
         else:
             print(' {}'.format(command))
 '''
-for intf, vlan in fast_int['trunk'].items():
+for intf, vlans in fast_int['trunk'].items():
     print('interface FastEthernet ' + intf)
     for command in trunk_template:
         if command.endswith('allowed vlan'):
-            if vlan[0] == "add":
-                print(' {} {}'.format(command, vlan[1]))
+            cmd = ''
+            for vlan in vlans:
+                if vlan == "add":
+                    cmd = ' {} add '.format(command)
+                elif vlan == "only":
+                    cmd = ' {} '.format(command)
+                elif vlan == "del":
+                    cmd = ' {} remove '.format(command)
+                else:
+                    print (cmd + vlan)
         else:
             print(' {}'.format(command))
