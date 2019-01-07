@@ -90,9 +90,9 @@ for intf, vlans in fast_int['trunk'].items():
         if command.endswith('allowed vlan'):
             if vlans[0] == "add":
                 print (' {} add {}'.format(command, ','.join(vlan for vlan in vlans[1::])))
-            elif vlan == "only":
+            elif vlans[0] == "only":
                 print (' {} {}'.format(command, ','.join(vlan for vlan in vlans[1::])))
-            elif vlan == "del":
+            elif vlans[0] == "del":
                 print (' {} remove {}'.format(command, ','.join(vlan for vlan in vlans[1::])))
         else:
             print(' {}'.format(command))
