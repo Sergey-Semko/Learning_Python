@@ -49,6 +49,8 @@ for intf, vlan in fast_int['access'].items():
         else:
             print(' {}'.format(command))
 '''
+#First variant
+'''
 for intf, vlans in fast_int['trunk'].items():
     print('interface FastEthernet ' + intf)
     for command in trunk_template:
@@ -63,5 +65,36 @@ for intf, vlans in fast_int['trunk'].items():
                     cmd = ' {} remove '.format(command)
                 else:
                     print (cmd + vlan)
+        else:
+            print(' {}'.format(command))
+#Output
+interface FastEthernet 0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan add 10
+ switchport trunk allowed vlan add 20
+interface FastEthernet 0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan 11
+ switchport trunk allowed vlan 30
+interface FastEthernet 0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan remove 17
+'''
+#Second variant
+for intf, vlans in fast_int['trunk'].items():
+    print('interface FastEthernet ' + intf)
+    for command in trunk_template:
+        if command.endswith('allowed vlan'):
+            cmd = ''
+            for vlan in vlans:
+                if vlans[0] == "add":
+                    print (' {} add {}'.format(command, ','.join(vlan for vlan in vlans[1::])))
+                elif vlan == "only":
+                    print (' {} {}'.format(command, ','.join(vlan for vlan in vlans[1::])))
+                elif vlan == "del":
+                    print (' {} remove {}'.format(command, ','.join(vlan for vlan in vlans[1::])))
         else:
             print(' {}'.format(command))
