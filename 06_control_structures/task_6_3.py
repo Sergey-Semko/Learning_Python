@@ -54,6 +54,6 @@ for intf, vlan in fast_int['trunk'].items():
     for command in trunk_template:
         if command.endswith('allowed vlan'):
             if vlan[0] == "add":
-            print(' {} {}'.format(command, vlan[1]))
+                print(' {} {}'.format(command, vlan[1]))
         else:
             print(' {}'.format(command))
