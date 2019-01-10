@@ -20,7 +20,7 @@
 try:
     IP_address = [int(x) for x in input("Enter IP address in format 10.0.1.1: ").split('.')]
     for i in range(4):
-        if IP_address not in range(0, 256):
+        if IP_address[i] not in range(0, 256):
             print('Incorrect IPv4 address')
 except (ValueError, IndexError):
     print('Incorrect IPv4 address')
