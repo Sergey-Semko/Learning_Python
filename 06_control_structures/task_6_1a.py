@@ -22,7 +22,7 @@ try:
     for i in range(4):
         if IP_address[i] not in range(0, 256):
             print('Incorrect IPv4 address')
-            return 1
+            exit()
 except (ValueError, IndexError):
     print('Incorrect IPv4 address')
 else:
