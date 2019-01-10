@@ -57,7 +57,7 @@ IP_address = input("Enter IP address in format 10.0.1.1: ")
 if IP_addrss.count('.') == 3:
     IP_address = [int(x) for x in IP_address.split('.')]
     for part in IP_address:
-        if part not in range(0,256)
+        if part not in range(0,256):
             print('Incorrect IPv4 address')
             exit()
 else:
