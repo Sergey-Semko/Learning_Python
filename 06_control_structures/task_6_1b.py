@@ -12,7 +12,7 @@
 #Solution
 address_correct = False
 while not address_correct:
-	IP_address = input("Enter IP address in format 10.0.1.1: ")
+    IP_address = input("Enter IP address in format 10.0.1.1: ")
     if IP_address.count('.') == 3:
         IP_address = [int(x) for x in IP_address.split('.')]
         for part in IP_address:
