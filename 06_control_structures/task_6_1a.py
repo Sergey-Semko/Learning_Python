@@ -55,9 +55,9 @@ else:
 #Solution 2
 IP_address = input("Enter IP address in format 10.0.1.1: ")		
 if IP_address.count('.') == 3:
-    IP_address = [int(x) for x in IP_address.split('.')]
+    IP_address = [x for x in IP_address.split('.')]
     for part in IP_address:
-        if part not in range(0,256):
+        if part not in range(0,256) or not part.isdigit():
             print('Incorrect IPv4 address')
             exit()
 else:
