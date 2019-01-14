@@ -14,10 +14,16 @@ address_correct = False
 while not address_correct:
     IP_address = input("Enter IP address in format 10.0.1.1: ")
     if IP_address.count('.') == 3:
-        IP_address = [int(x) for x in IP_address.split('.')]
+        IP_address = [x for x in IP_address.split('.')]
         for part in IP_address:
-            if part in range(0,256):
-                address_correct = True
+            if part.isdigit():
+                part = int(part)
+                if part in range(0,256):
+                    address_correct = True
+                else:
+                    address_correct = False
+                    print('Incorrect IPv4 address')
+                    break
             else:
                 address_correct = False
                 print('Incorrect IPv4 address')
