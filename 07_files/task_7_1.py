@@ -16,7 +16,14 @@ Outbound Interface:    FastEthernet0/0
 '''
 file = open('ospf.txt', 'r')
 
-route_template = "Protocol:              OSPF\nPrefix:                {1}\nAD/Metric:             {2}\nNext-Hop:              {4}\nLast update:           {5}\nOutbound Interface:    {6}"
+route_template = (
+  'Protocol:              OSPF\n'
+  'Prefix:                {1}\n'
+  'AD/Metric:             {2}\n'
+  'Next-Hop:              {4}\n'
+  'Last update:           {5}\n'
+  'Outbound Interface:    {6}'
+)
 
 for line in file:
     print(route_template.format(*line.replace('[', '').replace(']', '').replace(',', '').split()))
