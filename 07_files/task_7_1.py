@@ -20,5 +20,5 @@ route_template = "Protocol:              OSPF\nPrefix:                {1}\nAD/Me
 
 for line in file:
     print(route_template.format(*line.replace('[', '').replace(']', '').replace(',', '').split()))
-
+    print('-' * 40 + '\n')
 file.close()
