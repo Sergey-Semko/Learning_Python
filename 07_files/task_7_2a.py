@@ -12,4 +12,22 @@
 
 '''
 
+from sys import argv
+
 ignore = ['duplex', 'alias', 'Current configuration']
+ignore_presence = False
+
+file_name = argv[1]
+file = open(file_name, 'r')
+
+for line in file:
+    if not line.startwith('!'):
+        for word in ignore:
+            if line.find(word):
+                ignore_presence = True
+                break
+        if not ignore_presence:
+            print (line.strip())
+        else:
+            ignore_presence = False
+file.close()
