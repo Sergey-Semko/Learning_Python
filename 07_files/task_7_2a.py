@@ -23,7 +23,7 @@ file = open(file_name, 'r')
 for line in file:
     if not line.startswith('!'):
         for word in ignore:
-            if line.find(word):
+            if line.find(word) > -1:
                 ignore_presence = True
                 break
         if not ignore_presence:
