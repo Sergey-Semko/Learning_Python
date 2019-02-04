@@ -22,6 +22,6 @@ file = open('CAM_table.txt', 'r')
 
 for line in file:
     if line.count('.') == 2:
-        tmp = line.strip()split()
+        tmp = line.strip().split()
         print(' {0:8}{1:17}{3}'.format(*tmp))
 file.close()
