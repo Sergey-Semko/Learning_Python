@@ -21,7 +21,7 @@ file_name = argv[1]
 file = open(file_name, 'r')
 
 for line in file:
-    if not line.startwith('!'):
+    if not line.startswith('!'):
         for word in ignore:
             if line.find(word):
                 ignore_presence = True
