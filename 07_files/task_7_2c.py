@@ -16,4 +16,24 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
 
+from sys import argv
+
 ignore = ['duplex', 'alias', 'Current configuration']
+ignore_presence = False
+
+file_name_in, file_name_out = argv[1:]
+
+file_in = open(file_name_in, 'r')
+file_out = open(file_name_out, 'w')
+
+for line in file_in:
+    for word in ignore:
+        if line.find(word) > -1:
+            ignore_presence = True
+            break
+    if not ignore_presence:
+        file_out.write(line)
+    else:
+        ignore_presence = False
+file_in.close()
+file_out.close()
