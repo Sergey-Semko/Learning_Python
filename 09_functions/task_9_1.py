@@ -47,15 +47,23 @@ def generate_access_config(access):
         { 'FastEthernet0/12':10,
           'FastEthernet0/14':11,
           'FastEthernet0/16':17}
-
     Возвращает список всех портов в режиме access с конфигурацией на основе шаблона
     '''
+
     access_template = [
         'switchport mode access', 'switchport access vlan',
         'switchport nonegotiate', 'spanning-tree portfast',
         'spanning-tree bpduguard enable'
-    ]
-
+        ]
+    list_of_conf = []
+    for intf, vlan in access.items():
+        list_of_conf.append('interface {}'.format(intf))
+        for command in access_template:
+            if command.endswith('access vlan'):
+                list_of_conf.append('{} {}'.format(command, vlan))
+            else:
+                list_of_conf.append('{}'.format(command))
+    return list_of_conf
 
 access_dict = {
     'FastEthernet0/12': 10,
@@ -63,3 +71,6 @@ access_dict = {
     'FastEthernet0/16': 17,
     'FastEthernet0/17': 150
 }
+
+print(generate_access_config(access_dict))
+
