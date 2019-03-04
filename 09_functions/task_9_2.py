@@ -36,7 +36,7 @@ def generate_trunk_config(trunk):
         trunk_config.append('interface {}'.format(intf))
         for command in trunk_template:
             if command.endswith('allowed vlan'):
-                trunk_config.append('{} {}'.format(command, ','.join(vlan for vlan in vlans)))
+                trunk_config.append('{} {}'.format(command, ','.join(str(vlan) for vlan in vlans)))
         else:
             trunk_config.append('{}'.format(command))
     return trunk_config
