@@ -25,17 +25,27 @@
 def generate_trunk_config(trunk):
     '''
     trunk - словарь trunk-портов, для которых необходимо сгенерировать конфигурацию
-
     Возвращает список всех команд, которые были сгенерированы на основе шаблона
     '''
     trunk_template = [
         'switchport trunk encapsulation dot1q', 'switchport mode trunk',
         'switchport trunk native vlan 999', 'switchport trunk allowed vlan'
     ]
+    trunk_config = []
+    for intf, vlans in trunk.items():
+        trunk_config.append('interface {}'.format(intf))
+        for command in trunk_template:
+            if command.endswith('allowed vlan'):
+                trunk_config.append('{} {}'.format(command, ','.join(vlan for vlan in vlans)))
+        else:
+            trunk_config.append('{}'.format(command))
+    return trunk_config
 
 
 trunk_dict = {
     'FastEthernet0/1': [10, 20, 30],
     'FastEthernet0/2': [11, 30],
     'FastEthernet0/4': [17]
+    
+print(generate_trunk_config(trunk_dict))
 }
