@@ -46,6 +46,6 @@ trunk_dict = {
     'FastEthernet0/1': [10, 20, 30],
     'FastEthernet0/2': [11, 30],
     'FastEthernet0/4': [17]
-
-print(generate_trunk_config(trunk_dict))
 }
+print(generate_trunk_config(trunk_dict))
+
