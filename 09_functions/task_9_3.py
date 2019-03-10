@@ -29,15 +29,15 @@ def get_int_vlan_map(conf_file):
             if 'interface' in line:
                 interface = line.split()[-1]
             elif 'access vlan' in line:
-                vlan = line.split()[-1]
+                vlan = int(line.split()[-1])
                 access_dict[interface] = vlan
             elif 'trunk allowed vlan' in line:
                 vlans = line.split()[-1].split(',')
                 trunk_dict[interface] = vlans
     return access_dict, trunk_dict
 
-access_d = {}
-trunk_d = {}
+#access_d = {}
+#trunk_d = {}
 access_d, trunk_d = get_int_vlan_map('config_sw1.txt')
 
 print(access_d)
