@@ -42,10 +42,10 @@ def config_to_dic(conf_file):
     with open(conf_file) as f:
         for line in f:
             if not line.startswith('!') or not ignore_command(line, ignore) or not line.startswith(' '):
-                main_command = line.trim()
+                main_command = line.strip()
                 result[main_command] = []
             elif line.startswith(' '):
-                result[main_command].append(line.trim())
+                result[main_command].append(line.strip())
     return result
 
 conf = config_to_dic('config_sw1.txt')
