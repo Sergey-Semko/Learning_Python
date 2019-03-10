@@ -41,7 +41,7 @@ def config_to_dic(conf_file):
     result = {}
     with open(conf_file) as f:
         for line in f:
-            if not line.startswith('!') or not ignore_command(line, ignore) or not line.startswith(' '):
+            if not (line.startswith('!') or ignore_command(line, ignore) or line.startswith(' ')):
                 main_command = line.strip()
                 result[main_command] = []
             elif line.startswith(' '):
