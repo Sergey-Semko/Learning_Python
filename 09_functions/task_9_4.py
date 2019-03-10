@@ -39,7 +39,7 @@ def ignore_command(command, ignore):
 
 def config_to_dic(conf_file):
     result = {}
-    with open(config_file) as f:
+    with open(conf_file) as f:
         for line in f:
             if not line.startswith('!') or not ignore_command(line, ignore) or not line.startswith(' '):
                 main_command = line.trim()
