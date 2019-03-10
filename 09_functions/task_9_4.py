@@ -41,10 +41,12 @@ def config_to_dic(conf_file):
     result = {}
     with open(conf_file) as f:
         for line in f:
-            if not (line.startswith('!') or ignore_command(line, ignore) or line.startswith(' ')):
+            if line.startswith('!') or ignore_command(line, ignore):
+                continue
+            elif not line.startswith(' '):
                 main_command = line.strip()
                 result[main_command] = []
-            elif line.startswith(' '):
+            else: 
                 result[main_command].append(line.strip())
     return result
 
