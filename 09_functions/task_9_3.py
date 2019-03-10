@@ -32,7 +32,7 @@ def get_int_vlan_map(conf_file):
                 vlan = int(line.split()[-1])
                 access_dict[interface] = vlan
             elif 'trunk allowed vlan' in line:
-                vlans = line.split()[-1].split(',')
+                vlans = [int(item) for item in line.split()[-1].split(',')]
                 trunk_dict[interface] = vlans
     return access_dict, trunk_dict
 
