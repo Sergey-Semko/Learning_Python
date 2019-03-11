@@ -22,7 +22,6 @@ def generate_trunk_config(trunk):
         { 'FastEthernet0/1':[10,20],
           'FastEthernet0/2':[11,30],
           'FastEthernet0/4':[17] }
-
     Возвращает словарь:
     - ключи: имена интерфейсов, вида 'FastEthernet0/1'
     - значения: список команд, который надо выполнить на этом интерфейсе
@@ -31,10 +30,20 @@ def generate_trunk_config(trunk):
         'switchport trunk encapsulation dot1q', 'switchport mode trunk',
         'switchport trunk native vlan 999', 'switchport trunk allowed vlan'
     ]
-
+    trunk_config = {}
+    for intf, vlans in trunk.items():
+        trunk_config[intf] = []
+        for command in trunk_template:
+            if command.endswith('allowed vlan'):
+                trunk_config[intf].append('{} {}'.format(command, ','.join(str(vlan) for vlan in vlans)))
+        else:
+            trunk_config[intf].append(command)
+    return trunk_config
 
 trunk_dict = {
     'FastEthernet0/1': [10, 20, 30],
     'FastEthernet0/2': [11, 30],
     'FastEthernet0/4': [17]
 }
+
+print(generate_trunk_config(trunk_dict))
