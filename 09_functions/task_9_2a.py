@@ -36,8 +36,8 @@ def generate_trunk_config(trunk):
         for command in trunk_template:
             if command.endswith('allowed vlan'):
                 trunk_config[intf].append('{} {}'.format(command, ','.join(str(vlan) for vlan in vlans)))
-        else:
-            trunk_config[intf].append(command)
+            else:
+                trunk_config[intf].append(command)
     return trunk_config
 
 trunk_dict = {
