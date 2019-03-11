@@ -64,4 +64,4 @@ access_dict = {
 
 print(generate_access_config(access_dict))
 print('#' * 40)
-print(generate_access_config(access_dict, False))
+print(generate_access_config(access_dict, True))
