@@ -54,7 +54,7 @@ def config_to_dic(conf_file):
     result = {}
     with open(conf_file) as f:
         for line in f:
-            if line.startswith('!') or ignore_command(line, ignore):
+            if line.startswith('!') or check_ignore(line, ignore):
                 continue
             elif not line.startswith(' '):
                 main_command = line.strip()
