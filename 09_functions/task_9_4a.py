@@ -58,7 +58,7 @@ def config_to_dic(conf_file):
                 continue
             elif not line.startswith(' '):
                 main_command = line.strip()
-                three_level = false
+                three_level = False
                 result[main_command] = []
             elif line.startswith(' '):
                 result[main_command].append(line.strip())
@@ -67,7 +67,7 @@ def config_to_dic(conf_file):
                     last_command = result[main_command][-1]
                     result[main_command] = {key: {} for key in result[main_command]}
                     result[main_command][last_command] = []
-                    three_level = true
+                    three_level = True
                 result[main_command][last_command].append(line.strip())
     return result
 
