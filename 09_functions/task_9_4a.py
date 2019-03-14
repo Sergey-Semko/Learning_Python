@@ -49,3 +49,28 @@ def check_ignore(command, ignore):
 
     '''
     return any(word in command for word in ignore)
+
+def config_to_dic(conf_file):
+    result = {}
+    with open(conf_file) as f:
+        for line in f:
+            if line.startswith('!') or ignore_command(line, ignore):
+                continue
+            elif not line.startswith(' '):
+                main_command = line.strip()
+                three_level = false
+                result[main_command] = []
+            elif line.startswith(' '):
+                result[main_command].append(line.strip())
+            elif line.startswith('  '):
+                if not three_level:
+                    last_command = result[main_command][-1]
+                    result[main_command] = {key: {} for key in result[main_command]}
+                    result[main_command][last_command] = []
+                    three_level = true
+                result[main_command][last_command].append(line.strip())
+    return result
+
+conf = config_to_dic('config_r1.txt')
+print(conf)
+
