@@ -69,6 +69,8 @@ def config_to_dic(conf_file):
                     result[main_command][last_command] = []
                     three_level = True
                 result[main_command][last_command].append(line.strip())
+            else:
+                pass
     return result
 
 conf = config_to_dic('config_r1.txt')
