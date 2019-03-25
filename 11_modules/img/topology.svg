@@ -15,22 +15,15 @@
 <polygon fill="#006699" stroke="#006699" points="433.377,-223 357.377,-223 357.377,-150 433.377,-150 433.377,-223"/>
 <text text-anchor="middle" x="395.377" y="-182.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">R4</text>
 </g>
-<!-- R1 -->
-<g id="node2" class="node"><title>R1</title>
-<polygon fill="#006699" stroke="#006699" points="126.377,-347 50.3767,-347 50.3767,-274 126.377,-274 126.377,-347"/>
-<text text-anchor="middle" x="88.3767" y="-306.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">R1</text>
-</g>
 <!-- SW1 -->
-<g id="node3" class="node"><title>SW1</title>
+<g id="node2" class="node"><title>SW1</title>
 <polygon fill="#006699" stroke="#006699" points="254.877,-223 165.877,-223 165.877,-150 254.877,-150 254.877,-223"/>
 <text text-anchor="middle" x="210.377" y="-182.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">SW1</text>
 </g>
-<!-- R1&#45;&#45;SW1 -->
-<g id="edge4" class="edge"><title>R1&#45;&#45;SW1</title>
-<path fill="none" stroke="green" stroke-dasharray="5,2" d="M119.215,-273.981C128.95,-263.167 139.903,-251.396 150.377,-241 156.32,-235.101 162.773,-229.028 169.171,-223.187"/>
-<text text-anchor="middle" x="200.377" y="-244.8" font-family="Courier,monospace" font-size="14.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
-<text text-anchor="middle" x="144.171" y="-226.987" font-family="Courier,monospace" font-size="14.00" fill="white">Eth0/1</text>
-<text text-anchor="middle" x="94.2149" y="-262.781" font-family="Courier,monospace" font-size="14.00" fill="white">Eth0/0</text>
+<!-- R1 -->
+<g id="node3" class="node"><title>R1</title>
+<polygon fill="#006699" stroke="#006699" points="126.377,-347 50.3767,-347 50.3767,-274 126.377,-274 126.377,-347"/>
+<text text-anchor="middle" x="88.3767" y="-306.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="white">R1</text>
 </g>
 <!-- SW1&#45;&#45;R1 -->
 <g id="edge1" class="edge"><title>SW1&#45;&#45;R1</title>
@@ -62,6 +55,13 @@
 <text text-anchor="middle" x="319.377" y="-120.8" font-family="Courier,monospace" font-size="14.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
 <text text-anchor="middle" x="270.25" y="-82.4276" font-family="Courier,monospace" font-size="14.00" fill="white">Eth0/0</text>
 <text text-anchor="middle" x="214.33" y="-138.46" font-family="Courier,monospace" font-size="14.00" fill="white">Eth0/3</text>
+</g>
+<!-- R1&#45;&#45;SW1 -->
+<g id="edge4" class="edge"><title>R1&#45;&#45;SW1</title>
+<path fill="none" stroke="green" stroke-dasharray="5,2" d="M119.215,-273.981C128.95,-263.167 139.903,-251.396 150.377,-241 156.32,-235.101 162.773,-229.028 169.171,-223.187"/>
+<text text-anchor="middle" x="200.377" y="-244.8" font-family="Courier,monospace" font-size="14.00" fill="white"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text>
+<text text-anchor="middle" x="144.171" y="-226.987" font-family="Courier,monospace" font-size="14.00" fill="white">Eth0/1</text>
+<text text-anchor="middle" x="94.2149" y="-262.781" font-family="Courier,monospace" font-size="14.00" fill="white">Eth0/0</text>
 </g>
 <!-- R2&#45;&#45;SW1 -->
 <g id="edge5" class="edge"><title>R2&#45;&#45;SW1</title>

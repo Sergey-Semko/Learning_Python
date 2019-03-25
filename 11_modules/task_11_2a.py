@@ -44,3 +44,4 @@ for item in list_files:
         topology.update(parse_cdp_neighbors(f.read()))
 
 draw_topology(topology)
+print(topology)
