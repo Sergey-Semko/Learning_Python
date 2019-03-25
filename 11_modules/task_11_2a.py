@@ -41,16 +41,10 @@ topology = {}
 
 for item in list_files:
     with open(item) as f:
-<<<<<<< HEAD
-        topology.update(parse_cdp_neighbors(f.read()))
-
-draw_topology(topology)
-=======
         topology_tmp = parse_cdp_neighbors(f.read())
         for key in topology_tmp.keys():
             if topology.get(topology_tmp[key]) == 'None':
                 topology[key] = topology_tmp[key]
 #draw_topology(topology)
 
->>>>>>> 8f92c84f18bf2be20d6eb30a3aff699ad72c2cd8
 print(topology)
