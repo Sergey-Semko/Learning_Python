@@ -50,7 +50,6 @@ draw_topology(topology)
         for key in topology_tmp.keys():
             if topology.get(topology_tmp[key]) == 'None':
                 topology[key] = topology_tmp[key]
-#        topology.update(parse_cdp_neighbors(f.read()))
 #draw_topology(topology)
 
 >>>>>>> 8f92c84f18bf2be20d6eb30a3aff699ad72c2cd8
